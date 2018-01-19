@@ -328,7 +328,7 @@ docker run --name nginx -p 80:80 -d -v /home/www:/usr/share/nginx/html:ro -v /ho
 
 **bind测试是否正常的方法**
 
-> 找一台机器, 将其dns设为bind服务所在机器的ip, 执行nslookup www.baidu.com, 如果能正常返回则正常.
+> 找一台机器, 将其dns设为bind服务所在机器的ip, 执行`nslookup www.baidu.com`, 如果能正常返回则正常.
 
 **16.docker容器的备份和恢复**
 ```
