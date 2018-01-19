@@ -1,4 +1,6 @@
-# build image 
+> 注: 考虑到ngrok不再开源, 可以转向[frp](https://github.com/fatedier/frp)了
+
+**build image** 
 
 `git clone https://github.com/hteen/docker-ngrok.git`
 
