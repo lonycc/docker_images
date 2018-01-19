@@ -96,7 +96,7 @@ docker run --name gitlab-redis -d \
     sameersbn/redis:latest
 ```
 
-### (4). 安装gitlab
+**(4). 安装gitlab**
 ```
 docker run --name gitlab -d \
     --link gitlab-mysql:mysql \
