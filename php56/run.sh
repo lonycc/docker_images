@@ -1,0 +1,1 @@
+docker run --name phpfpm56 --privileged=true -d -v /home/www:/var/www/html mydocker/php:5.6

@@ -1,0 +1,1 @@
+docker run --name docker-redis -p 6379:6379 -v /home/opt/docker-redis:/usr/local/redis/data -d mydocker/redis:3.2.8

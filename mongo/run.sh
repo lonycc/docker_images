@@ -1,0 +1,1 @@
+docker run --name docker-mongodb -p 30000:30000 -v /home/opt/docker-mongodb/data:/usr/local/mongodb/data -d mydocker/mongodb:3.0.7

@@ -1,0 +1,1 @@
+docker run --name docker-mysql -p 3306:3306 -d -v /home/opt/docker-mysql/data:/usr/local/mysql/data mydocker/mysql:5.7.17
