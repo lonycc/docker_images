@@ -3,7 +3,7 @@ version: '2'
 services:
   docker-redis:
     restart: always
-    image: domain/redis:3.2.8
+    image: mydocker/redis:3.2.8
     command:
     - --loglevel warning
     volumes:
@@ -19,7 +19,7 @@ services:
 
   phpfpm56:
     restart: always
-    image: domain/php:5.6
+    image: mydocker/php:5.6
     volumes:
     - /home/www:/var/ww/html
     links:
@@ -28,7 +28,7 @@ services:
 
   phpfpm7:
     restart: always
-    image: domain/php:7.0
+    image: mydocker/php:7.0
     volumes:
     - /home/www:/var/www/html
     links:
@@ -37,7 +37,7 @@ services:
 
   docker-nginx:
     restart: always
-    image: domain/nginx:1.10.3
+    image: mydocker/nginx:1.10.3
     volumes:
     - /home/opt/nginx/conf.d:/usr/local/nginx/conf.d
     - /home/www:/usr/local/nginx/html
