@@ -1,0 +1,49 @@
+version: '2'
+
+services:
+  docker-redis:
+    restart: always
+    image: domain/redis:3.2.8
+    command:
+    - --loglevel warning
+    volumes:
+    - /home/opt/docker-redis:/usr/local/redis/data
+
+  docker-mysql:
+    restart: always
+    image: sameersbn/mysql:latest
+    volumes:
+    - /home/opt/docker-mysql/data:/var/lib/mysql
+    environment:
+    - MYSQL_ROOT_PASSWORD=docker_passwd
+
+  phpfpm56:
+    restart: always
+    image: domain/php:5.6
+    volumes:
+    - /home/www:/var/ww/html
+    links:
+    - docker-redis:redis
+    - docker-mysql:mysql
+
+  phpfpm7:
+    restart: always
+    image: domain/php:7.0
+    volumes:
+    - /home/www:/var/www/html
+    links:
+    - docker-redis:redis
+    - docker-mysql:mysql
+
+  docker-nginx:
+    restart: always
+    image: domain/nginx:1.10.3
+    volumes:
+    - /home/opt/nginx/conf.d:/usr/local/nginx/conf.d
+    - /home/www:/usr/local/nginx/html
+    - /home/opt/nginx/logs:/usr/local/nginx/logs
+    ports:
+    - "80:80"
+    links:
+    - phpfpm56:php56
+    - phpfpm7:php7
