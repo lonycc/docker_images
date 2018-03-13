@@ -415,6 +415,8 @@ setenforce 0
 
 `https://blog.smoker.cc/docker/elk-stack-in-docker.html`
 
+`https://portainer.readthedocs.io/en/latest/deployment.html`
+
 **19. 部署registry**
 ```
 docker pull registry:latest
