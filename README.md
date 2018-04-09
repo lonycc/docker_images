@@ -320,6 +320,10 @@ docker run --name nginx -p 80:80 -d -v /home/www:/usr/share/nginx/html:ro -v /ho
 
 **[jenkins](http://www.jianshu.com/p/8b1241a90d7a)**
 
+[jenkins+gitlab](https://www.jianshu.com/p/444a74d75f0a)
+
+[jenkins+gitlab](https://www.jianshu.com/p/bc9a1605a68e)
+
 `docker run -d --name jenkins -p 8080:8080 -p 50000:50000 -v /home/opt/jenkins:/var/jenkins_home --link gitlab:gitlab.domain.com -u root jenkins/jenkins:latest`
 
 **bind**
