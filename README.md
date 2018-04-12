@@ -142,6 +142,7 @@ docker info  #查看docker信息
 docker search image_name  #查找镜像
 docker top container_name #查看运行容器进程信息
 docker cp container_id:/path local_path #从容器里面拷贝文件/目录到宿主路径
+docker cp /local/path container_name:/path  #从宿主拷贝到容器
 docker history image_name #查看镜像历史
 docker diff image_name #列出镜像更改
 
