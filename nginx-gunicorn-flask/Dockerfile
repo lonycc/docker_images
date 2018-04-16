@@ -11,7 +11,7 @@ RUN apt-get install -y python python-pip python-virtualenv nginx gunicorn superv
 
 RUN mkdir -p /deploy/app
 COPY app /deploy/app
-RUN install -r /deploy/app/requirements.txt
+RUN pip install -r /deploy/app/requirements.txt
 
 RUN rm /etc/nginx/sites-enabled/default
 COPY flask.conf /etc/nginx/sites-available/
