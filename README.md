@@ -20,6 +20,8 @@ gpgkey=https://yum.dockerproject.org/gpg
 EOF
 ```
 
+> 由于`dockerproject.org`久未更新，建议直接去`https://download.docker.com/linux/centos/7/x86_64/stable/Packages/`下载最新rpm包.
+
 > 新版的 Docker 使用 /etc/docker/daemon.json（Linux）来配置 Daemon, 请在该配置文件中加入(没有该文件的话, 请先建一个):
 
 ```
@@ -32,6 +34,10 @@ EOF
 **3. 安装docker包**
 
 `sudo yum install docker-engine`
+
+或者本地安装
+
+`sudo yum localinstall docker-ce-xxx.rpm`
 
 **4. 启用服务**
 
