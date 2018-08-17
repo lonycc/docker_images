@@ -83,7 +83,7 @@ node1上运行`docker swarm init`去启动一台cluster manager节点， 然后�
 
 ` docker-machine ssh manager1 docker swarm init ...` #docker-machine ssh manager1只是连接虚拟机, 后面的命令同swarm
 
-`docker network ls`
+`docker network ls` #查看网络列表
 
 `docker network create --driver overlay swarm_test` #创建一个名为swarm_test的overlay网络
 
@@ -99,7 +99,7 @@ node1上运行`docker swarm init`去启动一台cluster manager节点， 然后�
 
 # docker四种网络模式
 
-> host模式, docker使用的网络和宿主机一样
+> host模式, docker使用的网络和宿主机一样, 自动映射
 
 `docker run --net-host`
 
@@ -107,10 +107,18 @@ node1上运行`docker swarm init`去启动一台cluster manager节点， 然后�
 
 `--net=container:container_id/container_name`
 
-> none模式, 不会配置网络
+> none模式, 不会分配局域网IP
 
 `--net=none`
 
-> bridge模式, 默认模式, 会给每个容器分配一个独立的network namespace
+> bridge模式, 默认模式, 会给每个容器分配一个独立的network namespace; 每次容器重启ip则发生变化
 
 `--net=bridge`
+
+## 创建自定义网络
+
+`docker network create --subnet=172.18.0.0/16 mynetwork`
+
+`docker network ls`
+
+`docker run -itd --name networkTest1 --net mynetwork --ip 172.18.0.2 centos:latest /bin/bash` #固定容器ip
