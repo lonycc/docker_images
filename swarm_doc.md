@@ -122,3 +122,5 @@ node1上运行`docker swarm init`去启动一台cluster manager节点， 然后�
 `docker network ls`
 
 `docker run -itd --name networkTest1 --net mynetwork --ip 172.18.0.2 centos:latest /bin/bash` #固定容器ip
+
+`docker network connect --alias [别名] [网络名] [容器名]`  #定义容器在网络内的别名
